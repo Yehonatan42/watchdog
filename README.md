@@ -43,18 +43,20 @@ To build and run the watchdog program, you need the following:
 
 1. Clone the repository:
 
-$ git clone https://github.com/username/watchdog.git
-$ cd watchdog
-Compile the watchdog library and binaries:
-$ make library
-$ make
-Execute the watchdog and user program:
-$ ./watchdog.out [options] -- ./user_program.out [user_program_args]
+git clone https://github.com/username/watchdog.git
+cd watchdog
+
+2: Compile the watchdog library and binaries:
+make library
+make
+
+3: Execute the watchdog and user program:
+./watchdog.out [options] -- ./user_program.out [user_program_args]
 options: Specify the interval and threshold for monitoring the user program by the watchdog.
 user_program_args: The arguments for the user program.
-Example usage:
 
-$ ./watchdog.out -i 5 -t 3 -- ./user_program.out arg1 arg2
+Example usage:
+./watchdog.out -i 5 -t 3 -- ./user_program.out arg1 arg2
 
 ### Watchdog and User Process Interaction
 The watchdog program and the user process have an interactive relationship. The watchdog continuously monitors the user process by sending periodic signals to check its responsiveness. If the user process fails to respond or terminates unexpectedly, the watchdog automatically revives it to maintain system stability.
